@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import {PeopleService} from "../../../services/people.service";
 import {People} from "../../../interfaces/people.interface";
 import {Observable} from "rxjs";
-import { Store } from '@ngrx/store';
-import {setPeople} from "../../../store/people/people.actions";
+import {select, Store} from '@ngrx/store';
+import {selectPeople} from "../../../store/people/people.selectors";
 
 @Component({
   selector: 'app-people-table',
@@ -12,6 +12,8 @@ import {setPeople} from "../../../store/people/people.actions";
 })
 export class PeopleTableComponent {
 
-  people$: Observable<People[]> = this.store.select('people');
-  constructor(private peopleService: PeopleService, private store: Store<{people: People[]}>) {}
+  people$: Observable<People[]>;
+  constructor(private peopleService: PeopleService, private store: Store<{people: People[]}>) {
+    this.people$ = this.store.pipe(select(selectPeople));
+  }
 }

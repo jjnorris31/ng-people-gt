@@ -1,1 +1,3 @@
-<div>{{people$ | async | json}}</div>
+<div *ngFor="let person of people$ | async">
+  {{person | json}}
+</div>
