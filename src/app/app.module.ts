@@ -10,13 +10,15 @@ import { StoreModule } from '@ngrx/store';
 import { peopleReducer } from './store/people/people.reducer';
 import {PeopleEffects} from "./store/people/people.effects";
 import { EffectsModule } from '@ngrx/effects';
+import { PeopleCardComponent } from './components/people/people-card/people-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     PeopleTableComponent,
-    PeopleTableComponent
+    PeopleTableComponent,
+    PeopleCardComponent
   ],
   imports: [
     BrowserModule,
