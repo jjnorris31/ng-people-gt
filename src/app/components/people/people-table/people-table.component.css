@@ -1,0 +1,8 @@
+.people-table-container {
+  width: 360px;
+  height: 434px;
+  border: 1px solid #DDDDDD;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}

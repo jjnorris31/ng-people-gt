@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {People} from "../../../interfaces/people.interface";
 
 @Component({
   selector: 'app-people-card',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./people-card.component.css']
 })
 export class PeopleCardComponent {
+
+  @Input() person!: People;
 
 }
