@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import {PeopleService} from "../../../services/people.service";
+import {setPeople} from "../../../store/people/people.actions";
+import {Observable} from "rxjs";
+import {People} from "../../../interfaces/people.interface";
+import {Store} from "@ngrx/store";
 
 @Component({
   selector: 'app-search-bar',
@@ -8,10 +12,15 @@ import {PeopleService} from "../../../services/people.service";
 })
 export class SearchBarComponent {
 
-  constructor(private peopleService: PeopleService) {
+  people$: Observable<People[]>
+
+  constructor(private peopleService: PeopleService, private store: Store<{people: People[]}>) {
+    this.people$ = this.store.select('people');
   }
-  getPeople() : void {
-    console.log("get people!");
-    this.peopleService.getPeople({});
+  public getPeople() {
+    this.peopleService.getPeople({}).subscribe((response) => {
+      console.log(response.results);
+      this.store.dispatch(setPeople({people: response.results}));
+    })
   }
 }

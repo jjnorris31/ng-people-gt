@@ -3,16 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './components/people/search-bar/search-bar.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
+import { PeopleTableComponent } from './components/people/people-table/people-table.component';
+
+import { StoreModule } from '@ngrx/store';
+import { peopleReducer } from './store/people/people.reducer';
+import {PeopleEffects} from "./store/people/people.effects";
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    PeopleTableComponent,
+    PeopleTableComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot( {people: peopleReducer}),
+    EffectsModule.forRoot([PeopleEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

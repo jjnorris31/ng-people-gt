@@ -17,11 +17,13 @@ export class PeopleService {
     let url = this.configURL;
 
     if (filter.search) {
-      url += `search${filter.search}&`
+      url += `search=${filter.search}&`
     }
 
-    this.http.get<PeopleResponse>(url).subscribe((response) => {
-      console.log(response.results);
-    })
+    if (filter.page) {
+      url += `page=${filter.page}&`
+    }
+
+    return this.http.get<PeopleResponse>(url);
   }
 }
