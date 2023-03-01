@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  font-family: Inter sans-serif;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.text-body-1 {
+  font-size: 1.125rem;
+}
+
+.primary-button {
+  background-color: #3070ED;
+  color: white;
+  outline: none;
+  border: none;
+}
