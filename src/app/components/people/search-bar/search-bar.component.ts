@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import {PeopleService} from "../../../services/people.service";
-import {setPeople} from "../../../store/people/people.actions";
-import {Observable} from "rxjs";
 import {People} from "../../../interfaces/people.interface";
 import {Store} from "@ngrx/store";
 
@@ -14,12 +11,11 @@ export class SearchBarComponent {
 
   search: string = "";
 
-  constructor(private peopleService: PeopleService, private store: Store<{people: People[]}>) {}
+  constructor(private store: Store<{people: People[]}>) {}
   public getPeople() {
-    this.peopleService.getPeople({
+    this.store.dispatch({
+      type: '[People Page] Load People',
       search: this.search
-    }).subscribe((response) => {
-      this.store.dispatch(setPeople({people: response.results}));
-    })
+    });
   }
 }

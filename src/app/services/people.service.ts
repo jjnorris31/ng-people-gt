@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {PeopleFilter, PeopleResponse} from "../interfaces/people.interface";
+import {People, PeopleFilter, PeopleResponse} from "../interfaces/people.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -25,5 +25,9 @@ export class PeopleService {
     }
 
     return this.http.get<PeopleResponse>(url);
+  }
+
+  getPerson(url: string) {
+    return this.http.get<People>(url);
   }
 }
