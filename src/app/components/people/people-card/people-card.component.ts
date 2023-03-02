@@ -3,7 +3,7 @@ import {People} from "../../../interfaces/people.interface";
 import {Observable} from "rxjs";
 import {select, Store} from "@ngrx/store";
 import {selectPerson, selectSelectedPerson} from "../../../store/people/people.selectors";
-import {setSelectedPerson} from "../../../store/people/people.actions";
+import {setPerson, setSelectedPerson} from "../../../store/people/people.actions";
 
 @Component({
   selector: 'app-people-card',
@@ -20,6 +20,7 @@ export class PeopleCardComponent {
   }
 
   onSelectPerson() {
+    this.store.dispatch(setPerson({person: undefined}));
     this.store.dispatch(setSelectedPerson({person: this.person}));
   }
 }

@@ -17,7 +17,7 @@ export class PeopleTableComponent {
   }
 
   loadPerson() {
-    this.store.pipe(select(selectSelectedPerson)).subscribe(person => {
+    const subscription = this.store.pipe(select(selectSelectedPerson)).subscribe(person => {
       if (person) {
         this.store.dispatch({
           type: '[People Page] Load Person',
@@ -25,5 +25,6 @@ export class PeopleTableComponent {
         });
       }
     });
+    subscription.unsubscribe();
   }
 }
