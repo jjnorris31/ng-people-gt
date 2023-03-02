@@ -4,9 +4,9 @@
 
     <div *ngIf="(people$ | async)?.length === 0">No data</div>
 
-    <app-people-card [person]="person"
+    <app-table-people-card [person]="person"
                      *ngFor="let person of people$ | async">
-    </app-people-card>
+    </app-table-people-card>
   </div>
 
   <button class="view-button rounded primary-button text-body-1"
