@@ -1,0 +1,14 @@
+<div>
+  <div class="mb-2 bold">Show information: </div>
+  <div class="person-card-container">
+    <div *ngIf="person$ | async as person">
+      <app-person-card-item label="Name" [value]="person.name"></app-person-card-item>
+      <app-person-card-item label="Height" [value]="person.height"></app-person-card-item>
+      <app-person-card-item label="Mass" [value]="person.mass"></app-person-card-item>
+      <app-person-card-item label="Skin color" [value]="person.skin_color"></app-person-card-item>
+      <app-person-card-item label="Birth year" [value]="person.birth_year"></app-person-card-item>
+      <app-person-card-item label="Hair color" [value]="person.hair_color"></app-person-card-item>
+      <app-person-card-item label="Eye color" [value]="person.eye_color"></app-person-card-item>
+    </div>
+  </div>
+</div>

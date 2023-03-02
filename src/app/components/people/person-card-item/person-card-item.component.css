@@ -1,0 +1,16 @@
+.card-item-info {
+  display: flex;
+  justify-content: center;
+  max-width: 250px;
+}
+
+.label {
+  max-width: 120px;
+  width: 120px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.value {
+  width: 130px;
+}

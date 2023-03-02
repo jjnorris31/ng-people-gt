@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
-import {PeopleService} from "../../../services/people.service";
 import {People} from "../../../interfaces/people.interface";
 import {Observable} from "rxjs";
 import {select, Store} from '@ngrx/store';
-import {selectPeople} from "../../../store/people/people.selectors";
-import {jsDocComment} from "@angular/compiler";
+import {selectPeople, selectPerson, selectSelectedPerson} from "../../../store/people/people.selectors";
 
 @Component({
   selector: 'app-people-table',
@@ -14,7 +12,19 @@ import {jsDocComment} from "@angular/compiler";
 export class PeopleTableComponent {
 
   people$: Observable<People[]>;
-  constructor(private peopleService: PeopleService, private store: Store<{people: People[]}>) {
+  constructor(private store: Store<{people: People[]}>) {
     this.people$ = this.store.pipe(select(selectPeople));
+  }
+
+  loadPerson() {
+    const subscription = this.store.pipe(select(selectSelectedPerson)).subscribe(person => {
+      if (person) {
+        this.store.dispatch({
+          type: '[People Page] Load Person',
+          url: person.url
+        });
+      }
+    });
+    subscription.unsubscribe();
   }
 }

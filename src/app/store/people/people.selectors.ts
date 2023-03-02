@@ -11,7 +11,13 @@ export const selectPeople = createSelector(
   (state: PeopleState) => state.people
 );
 
-export const selectPerson = createSelector(
+export const selectSelectedPerson = createSelector(
   selectPeopleState,
   (state: PeopleState) => state.selectedPerson
 )
+
+export const selectPerson = createSelector(
+  selectPeopleState,
+  (state: PeopleState) => state.person
+)
+
