@@ -3,10 +3,11 @@
   padding-right: 80px;
   height: 48px;
   align-items: center;
+  margin-bottom: 16px;
 }
 
 .search-text-input {
-  width: 360px;
+  width: 344px;
   padding-left: 15px;
   background: white;
   color: #000000;
@@ -18,5 +19,6 @@
 .search-button {
   margin-left: -122px;
   width: 115px;
+  font-weight: 500;
   height: 36px;
 }

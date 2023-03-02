@@ -12,14 +12,13 @@ import {Store} from "@ngrx/store";
 })
 export class SearchBarComponent {
 
-  people$: Observable<People[]>
+  search: string = "";
 
-  constructor(private peopleService: PeopleService, private store: Store<{people: People[]}>) {
-    this.people$ = this.store.select('people');
-  }
+  constructor(private peopleService: PeopleService, private store: Store<{people: People[]}>) {}
   public getPeople() {
-    this.peopleService.getPeople({}).subscribe((response) => {
-      console.log(response.results);
+    this.peopleService.getPeople({
+      search: this.search
+    }).subscribe((response) => {
       this.store.dispatch(setPeople({people: response.results}));
     })
   }

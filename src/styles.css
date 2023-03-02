@@ -1,5 +1,5 @@
-html {
-  font-family: Inter sans-serif;
+body {
+  font-family: 'Inter', sans-serif;
 }
 
 .rounded {
@@ -15,4 +15,20 @@ html {
   color: white;
   outline: none;
   border: none;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
 }
