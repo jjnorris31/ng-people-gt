@@ -2,7 +2,7 @@ import {Component, Input} from '@angular/core';
 import {People} from "../../../interfaces/people.interface";
 import {Observable} from "rxjs";
 import {select, Store} from "@ngrx/store";
-import {selectPerson} from "../../../store/people/people.selectors";
+import {selectPerson, selectSelectedPerson} from "../../../store/people/people.selectors";
 import {setSelectedPerson} from "../../../store/people/people.actions";
 
 @Component({
@@ -16,12 +16,10 @@ export class PeopleCardComponent {
   personSelected$: Observable<People | undefined>;
 
   constructor(private store: Store<{person: People}>) {
-    this.personSelected$ = this.store.pipe(select(selectPerson));
+    this.personSelected$ = this.store.pipe(select(selectSelectedPerson));
   }
 
   onSelectPerson() {
     this.store.dispatch(setSelectedPerson({person: this.person}));
   }
-
-  protected readonly setSelectedPerson = setSelectedPerson;
 }
