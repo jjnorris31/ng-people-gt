@@ -1,0 +1,24 @@
+.people-table-container {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  align-items: center;
+}
+
+.table-container {
+  width: 360px;
+  height: 434px;
+  border: 1px solid #DDDDDD;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin-bottom: 16px;
+}
+
+.view-button {
+  display: flex;
+  font-weight: 500;
+  max-width: 100px;
+  justify-content: center;
+  padding: 8px 24px;
+}

@@ -1,0 +1,20 @@
+<div class="people-table-container">
+  <div class="table-container rounded"
+       infinite-scroll
+       [infiniteScrollDistance]="2"
+       (scrolled)="onScroll()"
+       [scrollWindow]="false"
+       [class]="(people$ | async)?.length === 0 ? 'justify-center align-center' : ''">
+
+    <div *ngIf="(people$ | async)?.length === 0">No data</div>
+
+    <app-table-people-card [person]="person"
+                     *ngFor="let person of people$ | async">
+    </app-table-people-card>
+  </div>
+
+  <button class="view-button rounded primary-button text-body-1"
+          (click)="loadPerson()">
+    View
+  </button>
+</div>

@@ -1,0 +1,12 @@
+<div class="search-bar">
+  <input type="text"
+         maxlength="20"
+         [(ngModel)]="search"
+         (keyup.enter)="getPeople()"
+         placeholder="Search people"
+         class="search-text-input rounded text-body-1">
+  <button class="search-button rounded primary-button text-body-1"
+          (click)="getPeople()">
+    Search
+  </button>
+</div>

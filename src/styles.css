@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.text-body-1 {
+  font-size: 1.125rem;
+}
+
+.primary-button {
+  background-color: #3070ED;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mr-2 {
+  margin-right: 8px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+}
