@@ -14,6 +14,7 @@ import { PeopleTableCardComponent } from './components/people/people-table-card/
 import {FormsModule} from "@angular/forms";
 import { PersonCardComponent } from './components/people/person-card/person-card.component';
 import { PersonCardItemComponent } from './components/people/person-card-item/person-card-item.component';
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PersonCardItemComponent } from './components/people/person-card-item/pe
   imports: [
     BrowserModule,
     HttpClientModule,
+    InfiniteScrollModule,
     StoreModule.forRoot({people: peopleReducer}),
     EffectsModule.forRoot([PeopleEffects]),
     FormsModule

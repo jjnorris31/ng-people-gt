@@ -8,3 +8,5 @@ export const setSelectedPerson = createAction('[People Component] Set Selected P
 
 export const setPerson = createAction('[People Component] Set Person',
   props<{person: People | undefined}>());
+
+export const clearPeople = createAction('[People Component] Clear People');

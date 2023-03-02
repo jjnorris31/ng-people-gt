@@ -12,6 +12,7 @@ import {selectPeople, selectPerson, selectSelectedPerson} from "../../../store/p
 export class PeopleTableComponent {
 
   people$: Observable<People[]>;
+  page: number = 1;
   constructor(private store: Store<{people: People[]}>) {
     this.people$ = this.store.pipe(select(selectPeople));
   }
@@ -26,5 +27,13 @@ export class PeopleTableComponent {
       }
     });
     subscription.unsubscribe();
+  }
+
+  onScroll() {
+    this.page++;
+    this.store.dispatch({
+      type: '[People Page] Load People',
+      page: this.page
+    });
   }
 }
