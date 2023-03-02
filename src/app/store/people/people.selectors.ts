@@ -13,5 +13,5 @@ export const selectPeople = createSelector(
 
 export const selectPerson = createSelector(
   selectPeopleState,
-  (state: PeopleState) => state.person
+  (state: PeopleState) => state.selectedPerson
 )

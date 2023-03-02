@@ -4,6 +4,7 @@ import {People} from "../../../interfaces/people.interface";
 import {Observable} from "rxjs";
 import {select, Store} from '@ngrx/store';
 import {selectPeople} from "../../../store/people/people.selectors";
+import {jsDocComment} from "@angular/compiler";
 
 @Component({
   selector: 'app-people-table',

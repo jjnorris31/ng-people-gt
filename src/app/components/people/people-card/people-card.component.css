@@ -8,6 +8,16 @@
   border-bottom: 1px solid #DDDDDD;
 }
 
+.selected-card {
+  background-color: #3070ED;
+  color: white;
+}
+
+.selected-year-container {
+  background-color: white !important;
+  color: #3070ED !important;
+}
+
 .people-card-content-container {
   display: flex;
   justify-content: space-between;
@@ -18,7 +28,7 @@
   width: 100px;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   height: 30px;
   color: white;
 }
