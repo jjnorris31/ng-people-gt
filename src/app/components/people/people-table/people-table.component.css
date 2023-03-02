@@ -11,7 +11,7 @@
   border: 1px solid #DDDDDD;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow-y: scroll;
   margin-bottom: 16px;
 }
 

@@ -11,7 +11,8 @@ export class PeopleEffects {
   loadPeople$ = createEffect(() => this.actions$.pipe(
       ofType('[People Page] Load People'),
       exhaustMap((action: any) => this.peopleService.getPeople({
-        search: action.search
+        search: action.search,
+        page: action.page
       })
         .pipe(
           map(response => setPeople({people: response.results})),
