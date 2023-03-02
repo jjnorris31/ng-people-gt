@@ -24,3 +24,11 @@ body {
 .mr-2 {
   margin-right: 8px;
 }
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
