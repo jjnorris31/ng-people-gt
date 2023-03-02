@@ -10,3 +10,8 @@ export const selectPeople = createSelector(
   selectPeopleState,
   (state: PeopleState) => state.people
 );
+
+export const selectPerson = createSelector(
+  selectPeopleState,
+  (state: PeopleState) => state.person
+)
