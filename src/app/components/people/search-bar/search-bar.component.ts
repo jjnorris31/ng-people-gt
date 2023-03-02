@@ -16,7 +16,6 @@ export class SearchBarComponent {
 
   constructor(private peopleService: PeopleService, private store: Store<{people: People[]}>) {}
   public getPeople() {
-    console.log(this.search);
     this.peopleService.getPeople({
       search: this.search
     }).subscribe((response) => {
