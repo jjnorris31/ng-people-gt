@@ -5,6 +5,7 @@ export interface PeopleFilter {
 
 export interface People {
   name: string,
+  url: string,
   height: string,
   mass: string,
   hair_color: string,

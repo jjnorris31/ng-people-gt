@@ -1,9 +1,15 @@
-<div class="people-table-container rounded"
-     [class]="(people$ | async)?.length === 0 ? 'justify-center align-center' : ''">
+<div class="people-table-container">
+  <div class="table-container rounded"
+       [class]="(people$ | async)?.length === 0 ? 'justify-center align-center' : ''">
 
-  <div *ngIf="(people$ | async)?.length === 0">No data</div>
+    <div *ngIf="(people$ | async)?.length === 0">No data</div>
 
-  <app-people-card [person]="person"
-                   *ngFor="let person of people$ | async">
-  </app-people-card>
+    <app-people-card [person]="person"
+                     *ngFor="let person of people$ | async">
+    </app-people-card>
+  </div>
+
+  <button class="view-button rounded primary-button text-body-1">
+    View
+  </button>
 </div>

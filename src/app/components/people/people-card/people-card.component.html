@@ -1,7 +1,10 @@
-<div class="people-card-container">
+<div class="people-card-container"
+     (click)="onSelectPerson()"
+     [ngClass]="(personSelected$ | async)?.url === person.url ? 'selected-card' : ''">
   <div class="people-card-content-container mb-2">
     <span>{{person.name}}</span>
-    <div class="birth-year-container rounded">
+    <div class="birth-year-container rounded"
+         [ngClass]="(personSelected$ | async)?.url === person.url ? 'selected-year-container' : ''">
       <span class="mr-2">{{person.birth_year}}
       </span>
     </div>
