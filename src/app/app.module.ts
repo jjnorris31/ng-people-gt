@@ -13,6 +13,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { PeopleTableCardComponent } from './components/people/people-table-card/people-table-card.component';
 import {FormsModule} from "@angular/forms";
 import { PersonCardComponent } from './components/people/person-card/person-card.component';
+import { PersonCardItemComponent } from './components/people/person-card-item/person-card-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PersonCardComponent } from './components/people/person-card/person-card
     PeopleTableComponent,
     PeopleTableComponent,
     PeopleTableCardComponent,
-    PersonCardComponent
+    PersonCardComponent,
+    PersonCardItemComponent
   ],
   imports: [
     BrowserModule,

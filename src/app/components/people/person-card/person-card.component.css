@@ -1,0 +1,11 @@
+.person-card-container {
+  border: 1px solid #DDDDDD;
+  height: 250px;
+  width: 260px;
+}
+
+.card-item-info {
+  display: flex;
+  justify-content: center;
+  max-width: 200px;
+}
