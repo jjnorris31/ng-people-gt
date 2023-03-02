@@ -6,7 +6,7 @@
        [scrollWindow]="false"
        [class]="(people$ | async)?.length === 0 ? 'justify-center align-center' : ''">
 
-    <div *ngIf="(people$ | async)?.length === 0">No data</div>
+    <div *ngIf="(people$ | async)?.length === 0">There are not people</div>
 
     <app-table-people-card [person]="person"
                      *ngFor="let person of people$ | async">
