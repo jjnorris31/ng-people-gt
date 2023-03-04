@@ -1,5 +1,4 @@
 <div>
-  <div class="mb-2 bold">Show information: </div>
   <div class="person-card-container">
     <div *ngIf="person$ | async as person">
       <app-person-card-item label="Name" [value]="person.name"></app-person-card-item>

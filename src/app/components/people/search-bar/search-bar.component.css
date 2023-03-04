@@ -1,8 +1,8 @@
 .search-bar {
   display: flex;
-  padding-right: 80px;
   height: 48px;
   align-items: center;
+  justify-content: center;
   margin-bottom: 16px;
 }
 
@@ -21,4 +21,10 @@
   width: 115px;
   font-weight: 500;
   height: 36px;
+}
+
+@media only screen and (max-width: 960px) {
+  .search-text-input {
+    width: 312px;
+  }
 }
