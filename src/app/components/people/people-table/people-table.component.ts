@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 import {People} from "../../../interfaces/people.interface";
 import {Observable} from "rxjs";
 import {select, Store} from '@ngrx/store';
-import {selectPeople, selectPerson, selectSelectedPerson} from "../../../store/people/people.selectors";
+import {
+  selectLoadingPeople,
+  selectPeople,
+  selectSelectedPerson
+} from "../../../store/people/people.selectors";
 
 @Component({
   selector: 'app-people-table',
@@ -12,9 +16,11 @@ import {selectPeople, selectPerson, selectSelectedPerson} from "../../../store/p
 export class PeopleTableComponent {
 
   people$: Observable<People[]>;
+  loadingPeople$: Observable<boolean>;
   page: number = 1;
   constructor(private store: Store<{people: People[]}>) {
     this.people$ = this.store.pipe(select(selectPeople));
+    this.loadingPeople$ = this.store.pipe(select(selectLoadingPeople));
   }
 
   loadPerson() {
