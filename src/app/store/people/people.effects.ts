@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { EMPTY } from 'rxjs';
+import {concatMap, EMPTY, tap} from 'rxjs';
 import { map, exhaustMap, catchError } from 'rxjs/operators';
-import {setPeople, setPerson} from "./people.actions";
+import {loadedPeopleSuccess, setLoadingPeople, setPeople, setPerson} from "./people.actions";
 import { PeopleService } from '../../services/people.service';
 
 @Injectable()
@@ -15,9 +15,28 @@ export class PeopleEffects {
         page: action.page
       })
         .pipe(
-          map(response => setPeople({people: response.results})),
-          catchError(() => EMPTY)
-        ))
+          map(response => {
+            return loadedPeopleSuccess({people: response.results})
+          }),
+          catchError(() => EMPTY),
+        )),
+    )
+  );
+
+  showLoadingPeople$ = createEffect(() => this.actions$.pipe(
+      ofType('[People Page] Load People'),
+    map(response => setLoadingPeople({loadingPeople: true})),
+    )
+  );
+
+  loadPeopleSuccess$ = createEffect(() => this.actions$.pipe(
+    ofType('[People Component] Load People Success'),
+    map((response: any) => setPeople({people: response.people}))
+  ));
+
+  hideLoadingPeople$ = createEffect(() => this.actions$.pipe(
+      ofType('[People Component] Load People Success'),
+      map(response => setLoadingPeople({loadingPeople: false})),
     )
   );
 

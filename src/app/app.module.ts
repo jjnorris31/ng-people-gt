@@ -15,6 +15,7 @@ import {FormsModule} from "@angular/forms";
 import { PersonCardComponent } from './components/people/person-card/person-card.component';
 import { PersonCardItemComponent } from './components/people/person-card-item/person-card-item.component';
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
+import { ProgressCircularComponent } from './components/shared/progress-circular/progress-circular.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {InfiniteScrollModule} from "ngx-infinite-scroll";
     PeopleTableComponent,
     PeopleTableCardComponent,
     PersonCardComponent,
-    PersonCardItemComponent
+    PersonCardItemComponent,
+    ProgressCircularComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,11 @@ export const selectSelectedPerson = createSelector(
   (state: PeopleState) => state.selectedPerson
 )
 
+export const selectLoadingPeople = createSelector(
+  selectPeopleState,
+  (state: PeopleState) => state.loadingPeople
+)
+
 export const selectPerson = createSelector(
   selectPeopleState,
   (state: PeopleState) => state.person

@@ -36,3 +36,7 @@ body {
 .bold {
   font-weight: bold;
 }
+
+.no-visible {
+  display: none;
+}
