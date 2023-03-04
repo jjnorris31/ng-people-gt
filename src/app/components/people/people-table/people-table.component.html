@@ -1,7 +1,7 @@
 <div class="people-table-container">
   <div class="table-container rounded"
        infinite-scroll
-       [infiniteScrollDistance]="2"
+       [infiniteScrollDistance]="3"
        (scrolled)="onScroll()"
        [scrollWindow]="false"
        [class]="(people$ | async)?.length === 0 ? 'justify-center align-center' : ''">
